@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QR SAVE ID</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>QR SAVE ID</h1>
+    <form id="registroForm">
+      <fieldset>
+        <legend>Datos Personales</legend>
+        <input type="text" placeholder="Nombre completo" id="nombre" required />
+        <input type="text" placeholder="DNI" id="dni" required />
+        <input type="file" id="foto" accept="image/*" />
+      </fieldset>
+
+      <fieldset>
+        <legend>Datos Médicos</legend>
+        <input type="text" placeholder="Tipo de sangre" id="sangre" />
+        <input type="text" placeholder="Alergias" id="alergias" />
+        <input type="text" placeholder="Enfermedades" id="enfermedades" />
+        <input type="text" placeholder="Medicamentos" id="medicamentos" />
+        <input type="text" placeholder="Cirugías previas" id="cirugias" />
+      </fieldset>
+
+      <fieldset>
+        <legend>Contacto de Emergencia</legend>
+        <input type="text" placeholder="Nombre del contacto" id="contactoNombre" />
+        <input type="tel" placeholder="Teléfono de contacto" id="contactoTelefono" />
+      </fieldset>
+
+      <fieldset>
+        <legend>Seguridad</legend>
+        <input type="text" placeholder="Nombre de usuario" id="usuario" required />
+        <input type="password" placeholder="Contraseña" id="contrasena" required />
+      </fieldset>
+
+      <button type="submit">Guardar Información</button>
+    </form>
+
+    <div id="perfil" class="hidden">
+      <h2>Perfil Médico</h2>
+      <img id="imgPreview" src="" alt="Foto de perfil" />
+      <p><strong>Nombre:</strong> <span id="pNombre"></span></p>
+      <p><strong>DNI:</strong> <span id="pDni"></span></p>
+      <p><strong>Tipo de sangre:</strong> <span id="pSangre"></span></p>
+      <p><strong>Alergias:</strong> <span id="pAlergias"></span></p>
+      <p><strong>Enfermedades:</strong> <span id="pEnfermedades"></span></p>
+      <p><strong>Medicamentos:</strong> <span id="pMedicamentos"></span></p>
+      <p><strong>Cirugías:</strong> <span id="pCirugias"></span></p>
+      <p><strong>Contacto:</strong> <span id="pContacto"></span></p>
+      <div id="qrcode"></div>
+      <button id="editarBtn">Editar Información</button>
+    </div>
+
+    <div id="loginEdit" class="hidden">
+      <h3>Ingrese usuario y contraseña para editar</h3>
+      <input type="text" placeholder="Usuario" id="editUsuario" />
+      <input type="password" placeholder="Contraseña" id="editContrasena" />
+      <button id="verificarBtn">Verificar</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
